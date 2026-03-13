@@ -1,0 +1,117 @@
+<section id="contact" class="contact-container">
+    <div class="header">
+        <h2>Get In Touch</h2>
+        <p>Ready to create something amazing together? Let's bring your vision to life.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p class="intro">I'm passionate about building high-quality web applications and mentoring developers.
+                Whether it's a new project or just a technical chat, my inbox is always open.</p>
+
+            <div class="info-item">
+                <span class="label">Email</span>
+                <span class="value">your.email&#64;example.com</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Location</span>
+                <span class="value">India</span>
+            </div>
+
+            <div class="social-links">
+                <p>Follow My Journey</p>
+                <div class="btns">
+                    <a href="https://github.com" target="_blank" class="social-btn">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <header>
+                <span class="icon">💬</span>
+                <h4>Send a Message</h4>
+            </header>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="input-row">
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" placeholder="Your name">
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" formControlName="email" placeholder="your@email.com">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Subject</label>
+                    <input type="text" formControlName="subject" placeholder="What's this about?">
+                </div>
+
+                <div class="field">
+                    <label>Message</label>
+                    <textarea formControlName="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                </div>
+
+                <button type="submit" [disabled]="contactForm.invalid" class="submit-btn">
+                    <span>🚀</span> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-grid">
+
+        <div class="footer-column brand-area">
+            <h3 class="logo">Bhaskar Rao</h3>
+            <p class="bio">
+                A versatile developer blending Angular, UI architecture, and mentorship to build
+                smart, scalable, and future-ready web experiences.
+            </p>
+        </div>
+
+        <div class="footer-column links-area">
+            <h4>Quick Links</h4>
+            <ul class="footer-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column connect-area">
+            <h4>Connect</h4>
+            <div class="social-wrapper">
+                <a href="" target="_blank" class="social-icon" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+
+                <a href="" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a href="" class="social-icon" aria-label="Email">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="bottom-content">
+            <p>© 2026 Bhaskar Rao. Crafted with ❤️ and Angular.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>

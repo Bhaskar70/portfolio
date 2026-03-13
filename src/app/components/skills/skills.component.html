@@ -1,0 +1,33 @@
+<section id="skills" class="skills-section">
+  <div class="header">
+    <h2>My Skills</h2>
+    <p>Technologies and tools I use to build scalable enterprise applications.</p>
+  </div>
+
+  <div class="skills-grid">
+    @for (group of skillGroups; track group.category) {
+      <div class="skill-card">
+        <div class="icon-box">
+          <span class="material-icons">{{ group.icon }}</span>
+        </div>
+        
+        <h3>{{ group.category }}</h3>
+        
+        <ul class="skill-list">
+          @for (skill of group.skills; track skill) {
+            <li>
+              <span class="bullet"></span> {{ skill }}
+            </li>
+          } @empty {
+            <li>No skills listed yet.</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <div class="badge-footer">
+    <div class="pulse-dot"></div>
+    <span>Always learning and evolving</span>
+  </div>
+</section>

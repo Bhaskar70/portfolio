@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* Default: Dark Mode */
+body.dark-mode {
+  --bg-color: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a1;
+  --accent-color: #3b82f6;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shape-opacity: 0.05;
+}
+
+/* Light Mode Override */
+body.light-mode {
+  --bg-color: #f8f9fa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4b5563;
+  --accent-color: #2563eb;
+  --card-bg: rgba(0, 0, 0, 0.02);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shape-opacity: 0.15; // Make shapes slightly more visible in light mode
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease; // Smooth transition
+}
+
+:host {
+  display: block;
+  background: transparent !important;
+}
+
+section {
+  background: transparent !important;
+}

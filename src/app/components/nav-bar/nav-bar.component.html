@@ -1,0 +1,38 @@
+<nav class="nav-container" [class.scrolled]="isScrolled">
+  <div class="nav-content">
+    <div class="logo">
+      <span>Portfolio</span>
+    </div>
+
+    <div class="desktop-only">
+      <ng-container *ngTemplateOutlet="navContent"></ng-container>
+    </div>
+
+    <div class="mobile-toggle" (click)="toggleMenu()">
+      <i class="bi" [class.bi-list]="!showMenu" [class.bi-x-lg]="showMenu"></i>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-sidebar" [class.open]="showMenu">
+  <ng-container *ngTemplateOutlet="navContent"></ng-container>
+</div>
+
+<ng-template #navContent>
+  <ul class="nav-links">
+    @for(nav of navList; track nav) {
+      <li>
+        <a [href]="'#' + nav.toLowerCase()" (click)="showMenu = false">
+          {{ nav }}
+        </a>
+      </li>
+    }
+    <li (click)="onToggleTheme()">
+      <i [class]="isDark ? 'bi bi-sun-fill sun-icon' : 'bi bi-moon-stars-fill moon-icon'"></i>
+    </li>
+ 
+  </ul>
+  
+</ng-template>
+
+<div class="backdrop" *ngIf="showMenu" (click)="toggleMenu()"></div>
