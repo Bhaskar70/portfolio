@@ -7,6 +7,9 @@ body.dark-mode {
   --card-bg: rgba(255, 255, 255, 0.03);
   --border-color: rgba(255, 255, 255, 0.1);
   --shape-opacity: 0.05;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-text: #ffffff;
 }
 
 /* Light Mode Override */
@@ -18,6 +21,10 @@ body.light-mode {
   --card-bg: rgba(0, 0, 0, 0.02);
   --border-color: rgba(0, 0, 0, 0.08);
   --shape-opacity: 0.15; // Make shapes slightly more visible in light mode
+  --card-border: rgba(0, 0, 0, 0.1);
+  --input-bg: #f1f3f5;
+  --input-text: #1a1a1a;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -33,4 +40,31 @@ body {
 
 section {
   background: transparent !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media print {
+  body {
+    /* Force dark mode values specifically for the printer */
+    --bg-color: #0a0a0a;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1a1;
+    --accent-color: #3b82f6;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shape-opacity: 0.05;
+
+    /* Ensure the background actually renders */
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Remove transitions for printing to avoid glitchy rendering */
+  body,
+  * {
+    transition: none !important;
+  }
 }

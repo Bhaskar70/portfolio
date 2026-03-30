@@ -11,6 +11,7 @@
 
 .hero-content {
   z-index: 10;
+  margin-top: 30px;
   max-width: 700px;
 }
 
@@ -22,13 +23,20 @@
   .avatar-inner {
     width: 80px;
     height: 80px;
-    border: 2px solid var(--text-primary);
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     font-size: 1.5rem;
+    color: var(--text-primary);
+    background: var(--card-bg);
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: var(--accent-color);
+    }
   }
 }
 
@@ -37,6 +45,7 @@
   font-weight: 800;
   margin: 0;
   letter-spacing: -1px;
+  color: var(--text-primary);
 
   .highlight {
     color: var(--accent-color);
@@ -56,7 +65,7 @@
   line-height: 1.6;
 }
 
-/* Glassmorphism Buttons */
+/* CTA Buttons */
 .cta-group {
   display: flex;
   gap: 15px;
@@ -68,14 +77,18 @@
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
   }
 
   .btn-primary {
     background: var(--text-primary);
     color: var(--bg-color);
     border: none;
-    &:hover { opacity: 0.9; }
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
   }
 
   .btn-outline {
@@ -83,37 +96,21 @@
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
-    &:hover { background: var(--border-color); }
+
+    &:hover {
+      background: var(--border-color);
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
   }
 }
 
-/* Background Shapes */
-.shape {
-  position: absolute;
-  background: var(--text-secondary);
-  opacity: 0.05;
-  z-index: 1;
-
-  &.triangle {
-    width: 0; height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid var(--text-secondary);
-    top: 20%; left: 15%;
-    transform: rotate(15deg);
-  }
-
-  &.circle {
-    width: 150px; height: 150px;
-    border-radius: 50%;
-    bottom: 15%; right: 10%;
-  }
-}
+/* Social Icons */
 .social-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin: 25px 0; // Spacing between description and buttons
+  margin: 25px 0;
 }
 
 .social-icon {
@@ -122,8 +119,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   color: var(--text-secondary);
   font-size: 1.3rem;
@@ -135,14 +132,61 @@
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--text-primary);
+    background: var(--text-primary);
+    color: var(--bg-color);
     border-color: var(--text-primary);
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--card-shadow, 0 10px 20px rgba(0, 0, 0, 0.15));
 
     i {
       transform: scale(1.1);
+    }
+  }
+}
+
+/* Background Shapes */
+.shape {
+  position: absolute;
+  opacity: var(--shape-opacity, 0.05);
+  z-index: 1;
+
+  &.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid var(--text-secondary);
+    top: 20%;
+    left: 15%;
+    transform: rotate(15deg);
+  }
+
+  &.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    bottom: 15%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: 2.2rem;
+  }
+
+  .sub-headline {
+    font-size: 1rem;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 100%;
+      max-width: 280px;
     }
   }
 }

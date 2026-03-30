@@ -1,5 +1,6 @@
 .nav-container {
   position: fixed;
+  background-color: var(--bg-color);
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
