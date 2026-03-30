@@ -1,0 +1,42 @@
+<section id="blog" class="blog-container">
+  <div class="section-header">
+    <h2>From My Blog</h2>
+    <p>Practical deep dives into Angular, TypeScript, and full-stack development — written from real production experience.</p>
+  </div>
+
+  <div class="blog-grid">
+    @for (article of articles; track article.title) {
+      <a [href]="article.url" target="_blank" rel="noopener noreferrer" class="blog-card">
+        <div class="card-top">
+          <div class="tags">
+            @for (tag of article.tags; track tag.label) {
+              <span class="tag" [ngClass]="tag.color">{{ tag.label }}</span>
+            }
+          </div>
+          <span class="read-time">{{ article.readTime }}</span>
+        </div>
+
+        <div class="card-body">
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.description }}</p>
+        </div>
+
+        <div class="card-footer">
+          <span class="medium-label">
+            <span class="medium-dot"></span>
+            Medium
+          </span>
+          <span class="arrow">↗</span>
+        </div>
+      </a>
+    } @empty {
+      <p class="empty-state">No articles found. Check back soon!</p>
+    }
+  </div>
+
+  <div class="blog-cta">
+    <a href="https://medium.com/@bhaskarpaleti70366" target="_blank" rel="noopener noreferrer" class="view-all-btn">
+      View all articles on Medium ↗
+    </a>
+  </div>
+</section>
