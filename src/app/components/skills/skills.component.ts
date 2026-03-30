@@ -14,21 +14,26 @@ interface SkillGroup {
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-skillGroups: SkillGroup[] = [
+  skillGroups: SkillGroup[] = [
     {
       category: 'Frontend Development',
-      icon: 'code', // You can use Lucide-angular or FontAwesome icons
+      icon: 'code',
       skills: ['Angular 17/18', 'TypeScript', 'RxJS', 'NgRx', 'Tailwind CSS', 'SCSS']
     },
     {
-      category: 'Leadership & Tools',
-      icon: 'users',
-      skills: ['Technical Training', 'Mentorship', 'Git / GitHub', 'CI/CD Pipelines', 'Agile/Scrum']
+      category: 'Architecture & Patterns',
+      icon: 'account_tree',
+      skills: ['Component Design', 'Lazy Loading', 'Micro-Frontends', 'Design Patterns', 'Clean Architecture']
     },
     {
-      category: 'Testing & Core',
+      category: 'Testing & Quality',
       icon: 'terminal',
-      skills: ['Jasmine / Karma', 'Unit Testing', 'REST APIs', 'Web Performance', 'Clean Architecture']
+      skills: ['Jasmine / Karma', 'Unit Testing', 'REST APIs', 'Web Performance', 'Code Reviews']
+    },
+    {
+      category: 'Dev Tools & Workflow',
+      icon: 'build',
+      skills: ['Git / GitHub', 'CI/CD Pipelines', 'Agile / Scrum', 'VS Code', 'Chrome DevTools']
     }
   ];
 }

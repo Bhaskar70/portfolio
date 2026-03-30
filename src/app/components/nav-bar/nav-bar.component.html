@@ -22,7 +22,7 @@
   <ul class="nav-links">
     @for(nav of navList; track nav) {
       <li>
-        <a [href]="'#' + nav.toLowerCase()" (click)="showMenu = false">
+        <a [routerLink]="['/']" [fragment]="nav.toLowerCase()" (click)="showMenu = false">
           {{ nav }}
         </a>
       </li>

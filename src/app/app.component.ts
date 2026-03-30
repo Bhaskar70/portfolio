@@ -6,12 +6,13 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { BlogsComponent } from "./components/blogs/blogs.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavBarComponent, AboutComponent, SkillsComponent, ProjectsComponent, ContactComponent, HomeComponent,RouterOutlet],
+  imports: [NavBarComponent, AboutComponent, SkillsComponent, ProjectsComponent, ContactComponent, HomeComponent, RouterOutlet, BlogsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

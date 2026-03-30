@@ -16,31 +16,25 @@
     <div class="text-area">
       <h3>Hi there! I'm Bhaskara Rao</h3>
       <p class="bio">
-        A seasoned Frontend Engineer with **3.10 years of experience** specializing in the Angular ecosystem. 
-        I don't just write code; I architect scalable solutions and mentor developers to reach their full potential.
+        A Frontend Engineer with 3+ years of hands-on experience in the Angular ecosystem —
+        building performant, scalable web applications for enterprise environments.
       </p>
-      
+
       <p class="bio sub">
-        Currently, I am leading technical training for a team of developers, focusing on RxJS patterns, 
-        State Management, and performance optimization.
+        I specialise in writing clean, maintainable code with a strong focus on reactive
+        programming, state management, and delivering smooth user experiences at scale.
       </p>
 
       <div class="info-cards">
-        <div class="card">
-          <div class="icon">🚀</div>
-          <div class="card-text">
-            <strong>Frontend Architecture</strong>
-            <p>Building modular, reusable components and optimizing enterprise Angular apps.</p>
+        @for (feature of features; track feature.title) {
+          <div class="card">
+            <div class="icon">{{ feature.icon }}</div>
+            <div class="card-text">
+              <strong>{{ feature.title }}</strong>
+              <p>{{ feature.desc }}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="icon">👨‍🏫</div>
-          <div class="card-text">
-            <strong>Technical Mentorship</strong>
-            <p>Training developers on modern web standards and clean coding practices.</p>
-          </div>
-        </div>
+        }
       </div>
     </div>
   </div>

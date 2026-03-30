@@ -3,12 +3,13 @@ import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
 import { NavList } from '../../../../public/contants';
 import { MatExpansionModule } from "@angular/material/expansion";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
-  imports: [CommonModule, MatExpansionModule],
+  imports: [CommonModule, MatExpansionModule,RouterModule],
   standalone:true
 })
 export class NavBarComponent implements OnInit {

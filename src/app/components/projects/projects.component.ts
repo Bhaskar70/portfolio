@@ -18,7 +18,7 @@ interface Project {
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-projects: Project[] = [
+  projects: Project[] = [
     {
       title: 'Enterprise E-Commerce Dashboard',
       description: 'A high-performance Angular dashboard featuring real-time data visualization with RxJS and NgRx state management.',
