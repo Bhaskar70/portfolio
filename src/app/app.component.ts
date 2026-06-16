@@ -17,15 +17,5 @@ import { BlogsComponent } from "./components/blogs/blogs.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  // app.component.ts
-@HostListener('document:visibilitychange', [])
-onVisibilityChange() {
-  const bg = document.querySelector('.fixed-background');
-  if (document.hidden) {
-    bg?.classList.add('paused');
-  } else {
-    bg?.classList.remove('paused');
-  }
-}
-  title = 'portfolio';
+  
 }

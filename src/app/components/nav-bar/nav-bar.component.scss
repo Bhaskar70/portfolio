@@ -1,74 +1,76 @@
-.nav-container {
-  position: fixed;
-  background-color: var(--bg-color);
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  
-  &.scrolled {
-    background: rgba(var(--bg-rgb), 0.8);
-    backdrop-filter: blur(10px);
-  }
-}
+:host {
+  position: sticky;
+  top: 0px;
+  .nav-container {
+    .nav-content {
+      background-color: var(--bg-color);
+      display: grid;
+      grid-template-areas: "a b";
+      grid-auto-columns: 1fr 2fr;
+      padding: 24px;
+      color: var(--text-primary);
 
-.nav-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-}
+      .logo {
+        font-size: 20px;
+        font-weight: 500;
+      }
 
-.desktop-only {
-  display: flex;
-  align-items: center;
-  
-  @media (max-width: 768px) {
-    display: none; 
-  }
-}
+      .desktop-only {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
 
-.mobile-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  
-  @media (max-width: 768px) {
-    display: block; 
-  }
-}
+      .mobile-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
 
-.mobile-sidebar {
-  position: fixed;
-  top: 0;
-  right: -100%; 
-  width: 250px;
-  height: 100vh;
-  background: var(--bg-color);
-  transition: right 0.4s ease;
-  z-index: 999;
-  padding: 100px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+        @media (max-width: 768px) {
+          display: flex;
+          justify-content: end;
+        }
+      }
 
-  &.open {
-    right: 0; 
+    }
   }
 
-  .nav-links {
+  .mobile-sidebar {
+    position: fixed;
+    top: 66px;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: var(--bg-color);
+    transition: right 0.4s ease;
+    z-index: 999;
+    display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+
+    &.open {
+      right: 0;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
+
 }
 
 .nav-links {
   display: flex;
+  gap: 23px;
+  justify-content: end;
+  align-items: center;
   list-style: none;
-  gap: 2rem;
-  
-  a {
+
+  li a {
     text-decoration: none;
     color: var(--text-primary);
+    font-size: 16px;
     font-weight: 500;
   }
 }

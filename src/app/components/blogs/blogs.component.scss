@@ -1,5 +1,8 @@
+@use '../../../styles/mixins' as *; 
+
+
 .blog-container {
-  padding: 6rem 2rem;
+  padding: 50px 20px;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -30,23 +33,9 @@
   }
 
   .blog-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
     text-decoration: none;
-    color: inherit;
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-
+    @include themed-card;
     &:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-4px);
-      box-shadow: var(--card-shadow, 0 8px 24px rgba(59, 130, 246, 0.08));
-
       .arrow {
         transform: translate(3px, -3px);
       }
@@ -62,6 +51,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.375rem;
+        padding: 10px 0px;
       }
 
       .read-time {
@@ -73,41 +63,7 @@
     }
 
     .tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 99px;
-      letter-spacing: 0.02em;
-
-      &.tag-angular {
-        background: rgba(221, 74, 26, 0.12);
-        color: #f97316;
-      }
-
-      &.tag-ts {
-        background: rgba(59, 130, 246, 0.12);
-        color: #60a5fa;
-      }
-
-      &.tag-node {
-        background: rgba(34, 197, 94, 0.12);
-        color: #4ade80;
-      }
-
-      &.tag-api {
-        background: rgba(234, 179, 8, 0.12);
-        color: #facc15;
-      }
-
-      &.tag-perf {
-        background: rgba(168, 85, 247, 0.12);
-        color: #c084fc;
-      }
-
-      &.tag-js {
-        background: rgba(234, 179, 8, 0.12);
-        color: #facc15;
-      }
+     @include badge;
     }
 
     .card-body {
@@ -187,45 +143,6 @@
     }
   }
 
-  .empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: var(--text-secondary);
-    padding: 2rem;
-  }
-}
-
-/* Light mode tag overrides for readability */
-body.light-mode {
-  .tag-angular {
-    background: rgba(221, 74, 26, 0.1) !important;
-    color: #c2410c !important;
-  }
-
-  .tag-ts {
-    background: rgba(37, 99, 235, 0.1) !important;
-    color: #1d4ed8 !important;
-  }
-
-  .tag-node {
-    background: rgba(22, 163, 74, 0.1) !important;
-    color: #15803d !important;
-  }
-
-  .tag-api {
-    background: rgba(202, 138, 4, 0.1) !important;
-    color: #b45309 !important;
-  }
-
-  .tag-perf {
-    background: rgba(147, 51, 234, 0.1) !important;
-    color: #7e22ce !important;
-  }
-
-  .tag-js {
-    background: rgba(202, 138, 4, 0.1) !important;
-    color: #b45309 !important;
-  }
 }
 
 @media (max-width: 768px) {

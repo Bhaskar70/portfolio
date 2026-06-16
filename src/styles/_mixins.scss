@@ -1,0 +1,25 @@
+@mixin themed-card($radius: 20px, $padding: 40px) {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: $radius;
+  padding: $padding;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: var(--card-shadow, 0 8px 24px rgba(59, 130, 246, 0.08));
+  }
+}
+
+  @mixin badge {
+    background: var(--card-bg);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }

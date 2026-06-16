@@ -20,13 +20,13 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Enterprise E-Commerce Dashboard',
-      description: 'A high-performance Angular dashboard featuring real-time data visualization with RxJS and NgRx state management.',
-      image: 'assets/project1.png',
-      tags: ['Angular', 'TypeScript', 'RxJS', 'NgRx'],
-      githubUrl: '#',
-      liveUrl: '#',
-      date: 'Jan 2025 - Present'
+      title: 'PS Green Energy Portal',
+      description: 'A professional web application built for a green energy enterprise to promote and streamline sustainable solar panel installations and eco-friendly energy management solutions.',
+      image: 'project1.png', // Update with your actual image path or logo asset
+      tags: ['Angular', 'TypeScript', 'SCSS', 'Responsive Design'],
+      githubUrl: '#', // Add your repository link here if applicable
+      liveUrl: 'https://ps-green-energy.netlify.app/',
+      date: 'May 2026'
     },
     {
       title: 'Angular Mentorship Platform',
