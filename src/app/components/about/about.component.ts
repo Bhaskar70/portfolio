@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 interface Feature {
   title: string;
@@ -14,6 +14,23 @@ interface Feature {
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
+private readonly careerStartDate = new Date('2022-06-01');
+ 
+  readonly yearsOfExperience = computed(() => {
+    const now = new Date();
+    let years = now.getFullYear() - this.careerStartDate.getFullYear();
+ 
+    const hasHadAnniversaryThisYear =
+      now.getMonth() > this.careerStartDate.getMonth() ||
+      (now.getMonth() === this.careerStartDate.getMonth() &&
+        now.getDate() >= this.careerStartDate.getDate());
+ 
+    if (!hasHadAnniversaryThisYear) {
+      years--;
+    }
+ 
+    return years;
+  });
   features: Feature[] = [
     {
       title: 'Frontend Architecture',
