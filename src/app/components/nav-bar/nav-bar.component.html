@@ -23,7 +23,7 @@
     @for(nav of navList; track nav) {
       <li>
         <a [routerLink]="['/']" [fragment]="nav.toLowerCase()" (click)="showMenu = false">
-          {{ nav }}
+          {{ nav | titlecase  }}
         </a>
       </li>
     }

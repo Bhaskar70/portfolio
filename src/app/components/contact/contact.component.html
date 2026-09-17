@@ -88,7 +88,7 @@
       <ul class="footer-nav">
         @for (nav of footerLinks; track nav) {
           <li>
-            <a [routerLink]="['/']" [fragment]="nav.toLowerCase()">{{ nav }}</a>
+            <a [routerLink]="['/']" [fragment]="nav.toLowerCase()">{{ nav | titlecase}}</a>
           </li>
         }
       </ul>
